@@ -4,16 +4,6 @@ import phoneIcon from '../assets/phone.svg'
 import addressIcon from '../assets/location.svg'
 
 export function Preview ({info}) {
-    // return (
-    //     <div className='preview'>
-    //     {info.workExperience.company.map(place => (
-    //             <h1>{place.name}</h1>
-    //     ))}
-    //     </div>
-    // )
-    // IT WORKS
-
- 
     
     const personalDetails = info.personalDetails.details[0]
     const workExperience = info.workExperience.company
@@ -52,8 +42,8 @@ export function Preview ({info}) {
                 <h3 className='preview-heading'>Employment History</h3>
                           
                 { 
-                    workExperience.map(self => (
-                        <div className='text-block'>
+                    workExperience.map((self, id) => (
+                        <div key={'workPreview' + id} className='text-block'>
                             <p className='text-block-left'>
                                 {self.workStart} 
                                     {self.workStart.length ? " - " : ""} 
@@ -61,7 +51,7 @@ export function Preview ({info}) {
                                 <br/>
                                 {self.workLocation}
                             </p>
-                            <p>
+                            <div className='text-block-right'>
                                 <span className='bold'>
                                     {self.companyName}
                                 </span>
@@ -71,14 +61,14 @@ export function Preview ({info}) {
                                 <p className='text-description'>
                                     {self.description}
                                 </p>
-                            </p>   
+                            </div>   
                         </div>
                     ))
                 }
                 <h3 className='preview-heading'>Education</h3>
                 { 
-                    education.map(self => (
-                        <div className='text-block'>
+                    education.map((self,id) => (
+                        <div key={'schoolPreview' + id} className='text-block'>
                             <p className='text-block-left'>
                                 {self.schoolStart} 
                                     {self.schoolStart.length ? " - " : ""} 
@@ -101,9 +91,9 @@ export function Preview ({info}) {
                     <h3 className='preview-heading'>{skillset.heading}</h3> : <></>
                 }                
                 { 
-                    skillset.skills.split(',').map(self => (
+                    skillset.skills.split(',').map((self, id) => (
                             self.length ? 
-                            <div className='skill-list'>{self}</div> : <></>
+                            <div key={'skillList' + id} className='skill-list'>{self}</div> : <></>
                     )) 
                 }
             </div>
