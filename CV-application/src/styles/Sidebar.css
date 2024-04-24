@@ -10,7 +10,7 @@ aside {
     scroll-behavior: smooth;
 }
 button {
-    color: black;
+    color: #000000;
 }
 aside::-webkit-scrollbar{
     background-color: transparent;
