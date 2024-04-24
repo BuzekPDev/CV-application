@@ -1,0 +1,70 @@
+div.visible {
+    height: fit-content;
+    transform: translateY(0%);
+    opacity: 1;
+}
+div.hidden {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-25px);
+}
+#personalDetails,#workExperience,#education,#skillset {
+    transition: all 0.5s;
+    background-color: #e5e5e5;
+    border-radius: 0 0 10px 10px;
+    /* margin-top: 0.3rem; */
+}
+form {
+    background-color: #f9f9f9;
+    padding: 0.5rem;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 4px 4px 10px rgb(0,0,0,0.1);
+
+}
+.expand{
+    border-radius: 10px;
+}
+.expanded {
+    border-radius: 10px 10px 0 0;
+}
+.add {
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: center;
+}
+.expand, .expanded,.select-button, .add {
+    background-color: #f9f9f9;
+    border: 0px solid black;
+    width: 100%;
+    margin: 0.3rem 0;
+    text-align: left;
+    padding: 1rem 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 10px rgb(0,0,0,0.1);
+}
+.select-button, .add {
+    font-size: 1rem;
+    /* border-top: 0.5rem solid #e5e5e5; */
+}
+.img {
+    content: url(https://www.svgrepo.com/show/533623/arrow-sm-up.svg);
+    width: 1.5rem;
+    transform: rotate(0deg);
+    transition: all 0.3s;
+    pointer-events: none;
+    position: absolute;
+    right: 0.5rem;
+}
+.expanded .img{
+    transform: rotate(-180deg);
+}
+#description{
+    overflow-y: hidden;
+    resize: vertical;
+}

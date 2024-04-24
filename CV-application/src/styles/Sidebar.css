@@ -1,0 +1,96 @@
+aside {
+    background-color:  #e5e5e5;
+    width: 60rem;
+    height: 100%;
+    padding: 3rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+    scrollbar-color: #d4d4d4;
+    scrollbar-gutter: stable;
+    scroll-behavior: smooth;
+}
+aside::-webkit-scrollbar{
+    background-color: transparent;
+    width: 0.75rem;
+    box-sizing: content-box;
+}
+aside::-webkit-scrollbar-thumb{
+    background-color: #a3a3a3;
+    border-radius: 0.5rem;
+}
+.info {
+    border-radius: 10px;
+    background-color: #e5e5e5;
+    margin: 1.5rem 0rem;     
+}
+input,textarea{
+    display: block;
+    opacity: 0.8;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #e5e5e5;
+    transition: all 0.4s;
+}
+input:focus,textarea:focus{
+    border-color: #0284c7;
+    outline: #0284c7;
+    box-shadow:0px 0px 0.5rem rgb(2, 132, 199, 0.5);
+}
+label{
+    display: block;
+    box-sizing: border-box;
+    margin: 0.75rem 0rem;
+}
+.section-heading {
+    margin: 1rem 0rem;
+}
+.buttons {
+    display: block;
+    height: fit-content;
+    position: relative;
+    margin-top: 1.5rem;
+}
+.delete,
+.close,
+.save{
+    border: 0;
+    padding: 0.75rem;
+    border-radius: 10px;
+    background-color: #e5e5e5;
+}
+.close,
+.save{
+    float: right;
+    transition: background-color 0.2s;
+}
+.close {
+    background-color: #d4d4d4;
+    margin-right: 0.5rem;
+}
+.close:hover {
+    background-color: #a3a3a3;
+}
+.save {
+    background-color: #0284c7;
+    color: #f9f9f9;
+}
+.save:hover {
+    background-color: #0369a1;
+}
+.delete{
+    color: red;
+    font-weight: 600;
+    float: left;
+    transition: all 0.2s;
+}
+.delete:hover {
+    background-color: red;
+    color: #f9f9f9;
+}
+.float-control {
+    clear: both;
+}
