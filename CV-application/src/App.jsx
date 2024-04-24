@@ -5,8 +5,7 @@ import { Preview } from './components/Preview'
 import { Info } from './components/exampleInfo'
 import { Template } from './components/exampleInfo'
 import print from './assets/print.svg'
-import logo from './assets/CVMaker (4).svg'
-import icon from './assets/CVMaker logo.svg'
+import logo from './assets/CVMaker.svg'
 
 export function App () {
 
@@ -55,7 +54,6 @@ export function App () {
     const newObject = structuredClone(info)
     newObject[category][subclass][index][id] = value
       
-    console.log(newObject)
     setInfo(newObject)
   }
 
@@ -67,7 +65,6 @@ export function App () {
     
     const newObj = structuredClone(info)
     const objArray = newObj[category][subclass]
-    console.log(objArray)
 
     const newSelected = {workExperience: null, education: null}
     newSelected[category] = objArray.length
@@ -102,7 +99,6 @@ export function App () {
 
       const subclass = ev.target.className.split(' ')[0]
       const category = ev.target.parentElement.className.split('-')[0]
-      console.log(selected[category])
       const index = selected[category]
 
       if (index === null) return
