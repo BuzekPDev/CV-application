@@ -50,7 +50,6 @@ form {
 }
 .select-button, .add {
     font-size: 1rem;
-    /* border-top: 0.5rem solid #e5e5e5; */
 }
 .img {
     content: url(https://www.svgrepo.com/show/533623/arrow-sm-up.svg);
