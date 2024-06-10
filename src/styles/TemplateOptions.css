@@ -1,0 +1,50 @@
+:root body.light {
+    --main-bg: #e5e5e5;
+    --forms-bg: #f9f9f9;
+    --header-bg: #737373;
+    --print-btn: #57534e;
+    --example-hover: #d4d4d4;
+    --print-hover: #a8a29e;
+}
+
+:root body.dark{
+    --main-bg: #1f2937;
+    --forms-bg: #4b5563;
+    --header-bg: #111827;
+    --print-btn: #374151;
+    --example-hover: #374151;
+    --print-hover: #a8a29e;
+}
+
+.template-button {
+    border: 0;
+    padding: 1rem;
+    background-color: var(--main-bg);
+    margin: 0 0.8rem;
+    border-radius: 10px;
+    font-weight: 600;
+}
+#clear {
+    float: left;
+    color: red;
+    transition: all 0.2s;
+}
+#clear:hover {
+    background-color: red;
+    color: #f9f9f9;
+}
+#example {
+    float: right;
+    background-color: var(--main-bg);
+    transition: all 0.2s;
+}
+#example:hover {
+    background-color: var(--example-hover);
+}
+.template {
+    background-color: var(--forms-bg);
+    padding: 1rem;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px rgb(0,0,0,0.1);
+}

@@ -1,5 +1,6 @@
 import '../styles/Work.css'
-import workIcon from '../assets/work.svg'
+import workIconlight from '../assets/work-lightmode.svg'
+import workIcondark from '../assets/work-darkmode.svg'
 
 export function WorkExperience({ 
     addHandler,
@@ -8,14 +9,14 @@ export function WorkExperience({
     text,
     selected,
     selectHandler,
-    expand }) {
-
+    expand,
+    theme }) {
 
     const work = text.workExperience.company[selected]
 
     return (
         <div className='workExperience info'>
-            <button className='expand' type='button' onClick={expand}><img className='sidebar-icon' src={workIcon} />Employment History<div className='img'></div></button>
+            <button className='expand' type='button' onClick={expand}><img className='sidebar-icon' src={theme === 'light' ? workIconlight : workIcondark} />Employment History<div className='img'></div></button>
 
             <div id='workExperience' className='1 hidden'>
 
@@ -40,7 +41,7 @@ export function WorkExperience({
                                 <button className='close' type='button' onClick={selectHandler}>Close</button>
                                 <div className='float-control'></div>
                             </div>
-                        </form>) : <button onClick={addHandler} className='company add'>+ Education</button>
+                        </form>) : <button onClick={addHandler} className='company add'>+ Employment</button>
                 }
 
 

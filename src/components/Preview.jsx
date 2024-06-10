@@ -2,6 +2,7 @@ import '../styles/Preview.css'
 import emailIcon from '../assets/email.svg'
 import phoneIcon from '../assets/phone.svg'
 import addressIcon from '../assets/location.svg'
+import React from 'react'
 
 export function Preview ({info}) {
     
@@ -43,7 +44,7 @@ export function Preview ({info}) {
                           
                 { 
                     workExperience.map((self, id) => (
-                        <div key={'workPreview' + id} className='text-block'>
+                        <div key={'workPreview' + (42+id)} className='text-block'>
                             <p className='text-block-left'>
                                 {self.workStart} 
                                     {self.workStart.length ? " - " : ""} 
@@ -68,7 +69,7 @@ export function Preview ({info}) {
                 <h3 className='preview-heading'>Education</h3>
                 { 
                     education.map((self,id) => (
-                        <div key={'schoolPreview' + id} className='text-block'>
+                        <div key={'schoolPreview' + (23434+id)} className='text-block'>
                             <p className='text-block-left'>
                                 {self.schoolStart} 
                                     {self.schoolStart.length ? " - " : ""} 
@@ -93,7 +94,7 @@ export function Preview ({info}) {
                 { 
                     skillset.skills.split(',').map((self, id) => (
                             self.length ? 
-                            <div key={'skillList' + id} className='skill-list'>{self}</div> : <></>
+                            <div key={'skillList' + (43242+id)} className='skill-list'>{self}</div> : <React.Fragment key={'skillList' + (43242+id)}/>
                     )) 
                 }
             </div>

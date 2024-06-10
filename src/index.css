@@ -1,0 +1,212 @@
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+}
+:root body.light {
+    --main-bg: #e5e5e5;
+    --forms-bg: #f9f9f9;
+    --header-bg: #737373;
+    --print-btn: #57534e;
+    --example-hover: #d4d4d4;
+    --print-hover: #a8a29e;
+    --general-text: black;
+    color: var(--general-text);
+}
+
+:root body.dark{
+    --main-bg: #1f2937;
+    --forms-bg: #4b5563;
+    --header-bg: #111827;
+    --print-btn: #374151;
+    --example-hover: #111827;
+    --print-hover: #4b5563;
+    --general-text: #e5e6e5;
+    color: var(--general-text);
+}
+
+#root {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+header {
+    width: 100%;
+    background-color: var(--header-bg);
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    transition: background-color 0.5s;
+}
+a {
+    height: 2.5rem;
+    display: inline-block;
+    box-sizing: border-box;
+}
+.site-logo {
+    height: 2.5rem;
+}
+header>svg{
+    float: left;
+}
+.print {
+    height: 100%;
+    box-sizing: border-box;
+    background-color: var(--print-btn);
+    border: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    border-radius: 10px;
+    font-weight: 600;
+    float: right;
+    color: #e5e5e5;
+    transition: background-color 0.5s;
+}
+.print:hover {
+    background-color: var(--print-hover);
+}
+.print-svg{
+    height: 1.5rem;
+    aspect-ratio: 1/1;
+}
+.theme-toggle {
+    margin: 0.25rem 1rem 0.25rem 1rem;
+    height: 2rem;
+    width: 4rem;
+    border-radius: 1.25rem;
+    float: right;
+    padding: 0.1rem;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border: 0;
+}
+.dark-mode {
+    background-color: #374151;
+}
+.light-mode {
+    background-color: #d4d4d4;
+}
+.thumb-thing {
+    position: relative;
+    float: right;
+    box-sizing: border-box;
+    height: 1.8rem;
+    width: 1.8rem;
+    aspect-ratio: 1/1;
+    border: 2px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+    pointer-events: none;
+}
+#light {
+    transform: translateX(0.1rem);
+    position: absolute;
+    background-color: var(--forms-bg);
+}
+#dark {
+    transform: translateX(1.9rem);
+    position: absolute;
+    background-color: #1f2937;
+}
+.theme-icon {
+    width: 1rem;
+    transition: all 1s;
+}
+#dark .theme-icon.light, #light .theme-icon.dark {
+    display: none;
+}
+#light .theme-icon.light, #dark .theme-icon.dark {
+    display: block;
+}
+
+
+@media screen and (max-width: 600px) {
+    #root {
+        flex-direction: column;
+        height: fit-content;
+    }
+    .content{
+        flex-direction: column;
+    }
+    .print {
+        float: right;
+        height: 2.5rem;
+    }
+    aside{
+        overflow-y:initial;
+        height: auto;
+        width: 100%;
+    }
+    main {
+        width: 100%;
+        display: block;
+        width: 100%;
+        overflow-x: scroll;
+    }
+    .template-button {
+        margin: 0;
+    }
+    .expand,.expanded {
+        padding: 0.7rem;
+    }
+    form {
+        padding: 0.7rem;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+
+    #root {
+        flex-direction: column;
+        height: fit-content;
+    }
+    .content{
+        flex-direction: column;
+    }
+    aside {
+        width: 100%;
+        scrollbar-gutter:initial;
+    }
+
+    main {
+        width: 100%;
+        display: flex;
+        width: 100%;
+        overflow: scroll;
+    }
+    .print {
+        float: right;
+        height: 2.5rem;
+    }
+}
+
+@media print {
+    @page {
+        size: auto;
+        margin: 0%;
+    }
+    aside {
+        visibility: hidden;
+    }
+    header {
+        visibility: hidden;
+    }
+    main {
+        width: fit-content;
+        height: fit-content;
+    }
+    .preview {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top:0;
+        left: 0;
+    }
+    .preview>* {
+        visibility: visible !important;
+    }
+}

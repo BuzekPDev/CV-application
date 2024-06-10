@@ -11,7 +11,8 @@ export function Sidebar({
     selectHandler,
     eventHandler,
     info,
-    selected }) {
+    selected,
+    theme }) {
 
     function expand(e) {
         let category = e.target.parentElement.className
@@ -33,14 +34,16 @@ export function Sidebar({
                 text={info}
                 selected={selected.workExperience}
                 selectHandler={selectHandler}
-                expand={expand} />
+                expand={expand} 
+                theme={theme}/>
             <Education addHandler={addHandler}
                 deleteHandler={deleteHandler}
                 eventHandler={eventHandler}
                 text={info}
                 selected={selected.education}
                 selectHandler={selectHandler}
-                expand={expand} />
+                expand={expand}
+                theme={theme} />
 
         </aside>
     )

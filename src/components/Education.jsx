@@ -1,5 +1,6 @@
 import '../styles/Education.css'
-import schoolIcon from '../assets/school.svg'
+import schoolIconlight from '../assets/school-lightmode.svg'
+import schoolIcondark from '../assets/school-darkmode.svg'
 
 export function Education({ 
     addHandler,
@@ -8,13 +9,14 @@ export function Education({
     text,
     selected,
     selectHandler,
-    expand }) {
+    expand,
+    theme }) {
 
     const edu = text.education.school[selected]
 
     return (
         <div className='education info'>
-            <button className='expand' type='button' onClick={expand}><img className='sidebar-icon' src={schoolIcon} />Education<div className='img'></div></button>
+            <button className='expand' type='button' onClick={expand}><img className='sidebar-icon' src={theme === 'light' ? schoolIconlight : schoolIcondark} />Education<div className='img'></div></button>
 
             <div id='education' className='0 hidden'>
                 {
@@ -67,7 +69,7 @@ function StartDate({ handleChange, value, selected }) {
     return (
         <label className='school'>
             Start date
-            <input className={selected} id='schoolStart' value={value} onChange={handleChange} type='date' />
+            <input className={selected} id='schoolStart' value={value} onChange={handleChange} type='text' />
         </label>
     )
 }
@@ -76,7 +78,7 @@ function EndDate({ handleChange, value, selected }) {
     return (
         <label className='school'>
             End date
-            <input className={selected} id='schoolEnd' value={value} onChange={handleChange} type='date' />
+            <input className={selected} id='schoolEnd' value={value} onChange={handleChange} type='text' />
         </label>
     )
 }
